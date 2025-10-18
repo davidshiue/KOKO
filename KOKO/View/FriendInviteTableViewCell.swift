@@ -10,6 +10,13 @@ import UIKit
 class FriendInviteTableViewCell: UITableViewCell {
     
     @IBOutlet weak var panel: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    var friend: Friend = Friend(name: "unknow", status: 0, isTop: "0", fid: "000", updateDate: "20010101"){
+        didSet{
+            nameLabel.text = friend.name
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

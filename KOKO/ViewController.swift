@@ -12,18 +12,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        WebApiManager.shared.getMan()
+        //WebApiManager.shared.getMan()
     }
 
     @IBAction func scenario1Click(_ sender: UIButton) {
+        GlobalData.shared.scene = 0
         pushToSecondViewController()
     }
     
     @IBAction func scenario2Click(_ sender: UIButton) {
+        GlobalData.shared.scene = 1
         pushToSecondViewController()
     }
     
     @IBAction func scenario3Click(_ sender: UIButton) {
+        GlobalData.shared.scene = 2
         pushToSecondViewController()
     }
     

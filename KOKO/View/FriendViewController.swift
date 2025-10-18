@@ -8,11 +8,42 @@
 import UIKit
 
 class FriendViewController: UIViewController {
-    
+    @IBOutlet weak var myNameLabel: UILabel!
+    @IBOutlet weak var myIdLabel: UILabel!
+    @IBOutlet weak var friendInviteArea: UIView!
     @IBOutlet weak var friendInviteTableView: UITableView!
     @IBOutlet weak var friendTableView: UITableView!
+    @IBOutlet weak var noFriendView: UIView!
     @IBOutlet weak var addFriendTextView: UITextView!
     
+    private var friendViewModel = FriendViewModel(){
+        didSet{
+            self.friendViewModel.bindManToViewController = { [weak self] in
+                DispatchQueue.main.async {
+                    if let self = self {
+                        self.myNameLabel.text = self.friendViewModel.man.name
+                        self.myIdLabel.text = self.friendViewModel.man.id
+                    }
+                }
+
+            }
+            self.friendViewModel.bindFriendsToViewController = { [weak self] in
+                DispatchQueue.main.async {
+                    if let self = self {
+                        self.friendInviteTableView.reloadData()
+                        self.friendTableView.reloadData()
+                    }
+                }
+
+            }
+
+            /*DispatchQueue.main.async {
+                self.noFileView.isHidden = self.localListViewModel.viewModels.count == 0 ? false : true
+                self.tableView.reloadData()
+            }*/
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,11 +82,41 @@ class FriendViewController: UIViewController {
         addFriendTextView.attributedText = attributedText
 
         //WebApiManager.shared.getFriend1()
+        self.friendViewModel.bindManToViewController = { [weak self] in
+            DispatchQueue.main.async {
+                if let self = self {
+                    self.myNameLabel.text = self.friendViewModel.man.name
+                    self.myIdLabel.text = "KOKO ID： " + self.friendViewModel.man.id
+                }
+            }
+        }
+        self.friendViewModel.bindFriendsToViewController = { [weak self] in
+            DispatchQueue.main.async {
+                if let self = self {
+                    if self.friendViewModel.friends_invite.count == 0 {
+                        self.friendInviteArea.isHidden = true
+                    } else {
+                        self.friendInviteArea.isHidden = false
+                    }
+                    if self.friendViewModel.friends_list.count == 0 {
+                        self.noFriendView.isHidden = false
+                    } else {
+                        self.noFriendView.isHidden = true
+
+                    }
+                    self.friendInviteTableView.reloadData()
+                    self.friendTableView.reloadData()
+                }
+            }
+
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // 隐藏导航栏
+        friendViewModel.getMan()
+        friendViewModel.getFriends(sceneIndex: GlobalData.shared.scene)
         //navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
@@ -72,6 +133,14 @@ class FriendViewController: UIViewController {
 }
 
 extension FriendViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if tableView == friendInviteTableView {
+            return 80.0
+        }else{
+            return 60.0
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == friendInviteTableView {
             return friendInviteTableView(numberOfRowsInSection: section)
@@ -81,11 +150,11 @@ extension FriendViewController: UITableViewDelegate{
     }
         
     func friendInviteTableView(numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return friendViewModel.friends_invite.count
     }
         
     func friendTableView(numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return friendViewModel.friends_list.count
     }
 }
 
@@ -101,11 +170,15 @@ extension FriendViewController: UITableViewDataSource{
     
     func friendInviteTableView(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:FriendInviteTableViewCell  = self.friendInviteTableView.dequeueReusableCell(withIdentifier: "FriendInviteTableViewCell",for: indexPath) as! FriendInviteTableViewCell
+        let friend = friendViewModel.friends_invite[indexPath.row]
+        cell.friend = friend
         return cell
     }
     
     func friendTableView(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:FriendTableViewCell = self.friendTableView.dequeueReusableCell(withIdentifier: "FriendTableViewCell",for: indexPath) as! FriendTableViewCell
+        let friend = friendViewModel.friends_list[indexPath.row]
+        cell.friend = friend
         return cell
     }
     

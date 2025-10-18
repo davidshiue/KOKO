@@ -40,6 +40,7 @@
 		63C5EA272EA0D5EB00D84637 /* Exceptions for "KOKO" folder in "KOKOTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				GlobalData.swift,
 				Model/MyClass.swift,
 				Service/NetworkManager.swift,
 				Service/WebApiManager.swift,
@@ -48,6 +49,7 @@
 				View/FriendTableViewCell.swift,
 				View/FriendTableViewCell.xib,
 				View/FriendViewController.swift,
+				ViewModel/FriendViewModel.swift,
 			);
 			target = 63C5E9EE2EA0D34B00D84637 /* KOKOTests */;
 		};
