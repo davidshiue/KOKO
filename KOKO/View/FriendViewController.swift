@@ -8,6 +8,7 @@
 import UIKit
 
 class FriendViewController: UIViewController {
+    @IBOutlet weak var showInviteAreaButton: UIButton!
     @IBOutlet weak var manArea: UIView!
     @IBOutlet weak var myNameLabel: UILabel!
     @IBOutlet weak var myIdLabel: UILabel!
@@ -104,8 +105,10 @@ class FriendViewController: UIViewController {
                 if let self = self {
                     if self.friendViewModel.friends_invite.count == 0 {
                         self.friendInviteArea.isHidden = true
+                        self.showInviteAreaButton.isHidden = true
                     } else {
                         self.friendInviteArea.isHidden = false
+                        self.showInviteAreaButton.isHidden = false
                     }
                     if self.friendViewModel.friends_list.count == 0 {
                         //self.noFriendScrollView.isHidden = false
@@ -162,6 +165,14 @@ class FriendViewController: UIViewController {
         friendTableView.reloadData()
     }
     
+    @IBAction func showInviteClick(_ sender: Any) {
+        showInviteAreaButton.isSelected.toggle()
+        if showInviteAreaButton.isSelected && (friendViewModel.friends_invite.count > 0) {
+            friendInviteArea.isHidden = false
+        } else {
+            friendInviteArea.isHidden = true
+        }
+    }
     /*
     // MARK: - Navigation
 
