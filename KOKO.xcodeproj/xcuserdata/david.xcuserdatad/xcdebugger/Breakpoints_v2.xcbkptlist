@@ -36,5 +36,249 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AE5FF6BA-D973-435E-AD6E-6F02AE6AD6E6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KOKOTests/KOKOTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "testJsonStringToDictionary()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EE3F4534-DB0E-4F25-B7B4-CA084E559C01"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KOKOTests/KOKOTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "testJsonStringToDictionary()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4B8760A5-9C41-4A69-82BF-D89E6273C5F2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KOKOTests/KOKOTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "testGetMan()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4B8760A5-9C41-4A69-82BF-D89E6273C5F2 - a5c66d4607734df1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 () async -&gt; () in KOKOTests.KOKOTests.testGetMan() -&gt; ()"
+                  moduleName = "KOKOTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david/project/KOKO/KOKOTests/KOKOTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46">
+               </Location>
+               <Location
+                  uuid = "4B8760A5-9C41-4A69-82BF-D89E6273C5F2 - 6d2d18bc7f6fd7f2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 () async -&gt; () in KOKOTests.KOKOTests.testGetMan() -&gt; ()"
+                  moduleName = "KOKOTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david/project/KOKO/KOKOTests/KOKOTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46">
+               </Location>
+               <Location
+                  uuid = "4B8760A5-9C41-4A69-82BF-D89E6273C5F2 - 6d2d18bc7f6fd7f2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 () async -&gt; () in KOKOTests.KOKOTests.testGetMan() -&gt; ()"
+                  moduleName = "KOKOTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david/project/KOKO/KOKOTests/KOKOTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "05DE8D84-4DB5-4A1B-8C42-F4CCEB105F06"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KOKOTests/KOKOTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "testGetMan()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "71F9C71A-236C-4505-B806-93E8501D98B9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KOKOTests/KOKOTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "testGetMan()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "71F9C71A-236C-4505-B806-93E8501D98B9 - 35ec7a4b977a1e31"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 () async -&gt; () in KOKOTests.KOKOTests.testGetMan() -&gt; ()"
+                  moduleName = "KOKOTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david/project/KOKO/KOKOTests/KOKOTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44">
+               </Location>
+               <Location
+                  uuid = "71F9C71A-236C-4505-B806-93E8501D98B9 - 333efd6576f24ef8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 () async -&gt; () in KOKOTests.KOKOTests.testGetMan() -&gt; ()"
+                  moduleName = "KOKOTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david/project/KOKO/KOKOTests/KOKOTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44">
+               </Location>
+               <Location
+                  uuid = "71F9C71A-236C-4505-B806-93E8501D98B9 - a5c66d4607734a3f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 () async -&gt; () in KOKOTests.KOKOTests.testGetMan() -&gt; ()"
+                  moduleName = "KOKOTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david/project/KOKO/KOKOTests/KOKOTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44">
+               </Location>
+               <Location
+                  uuid = "71F9C71A-236C-4505-B806-93E8501D98B9 - 6d2d18bc7f6fd03c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 () async -&gt; () in KOKOTests.KOKOTests.testGetMan() -&gt; ()"
+                  moduleName = "KOKOTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david/project/KOKO/KOKOTests/KOKOTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AE6DEEF4-073A-45FD-8307-39DD5AF705A0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KOKOTests/KOKOTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "testGetMan()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD3B985D-648F-4F62-B25F-1212985D1C0D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KOKOTests/KOKOTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "getFriend1()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AD3B985D-648F-4F62-B25F-1212985D1C0D - ae412f3a51a5b0bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KOKOTests.KOKOTests.testGetFriend1() async throws -&gt; ()"
+                  moduleName = "KOKOTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david/project/KOKO/KOKOTests/KOKOTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54">
+               </Location>
+               <Location
+                  uuid = "AD3B985D-648F-4F62-B25F-1212985D1C0D - 93cde85b093ab913"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for KOKOTests.KOKOTests.testGetFriend1() async throws -&gt; ()"
+                  moduleName = "KOKOTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david/project/KOKO/KOKOTests/KOKOTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
