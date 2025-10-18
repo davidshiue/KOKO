@@ -8,13 +8,22 @@
 import UIKit
 
 class FriendViewController: UIViewController {
+    @IBOutlet weak var manArea: UIView!
     @IBOutlet weak var myNameLabel: UILabel!
     @IBOutlet weak var myIdLabel: UILabel!
     @IBOutlet weak var friendInviteArea: UIView!
     @IBOutlet weak var friendInviteTableView: UITableView!
     @IBOutlet weak var friendTableView: UITableView!
     @IBOutlet weak var noFriendView: UIView!
+    //@IBOutlet weak var noFriendScrollView: UIScrollView!
     @IBOutlet weak var addFriendTextView: UITextView!
+    
+    private let searchController = UISearchController(searchResultsController: nil)
+    private var filteredItems: [Friend] = []
+    
+    private var isSearching: Bool {
+        return searchController.isActive && !(searchController.searchBar.text?.isEmpty ?? true)
+    }
     
     private var friendViewModel = FriendViewModel(){
         didSet{
@@ -99,25 +108,45 @@ class FriendViewController: UIViewController {
                         self.friendInviteArea.isHidden = false
                     }
                     if self.friendViewModel.friends_list.count == 0 {
+                        //self.noFriendScrollView.isHidden = false
                         self.noFriendView.isHidden = false
+                        self.noFriendView.frame.size.height = 445
                     } else {
+                        //self.noFriendScrollView.isHidden = true
                         self.noFriendView.isHidden = true
-
+                        self.noFriendView.frame.size.height = 0
                     }
                     self.friendInviteTableView.reloadData()
                     self.friendTableView.reloadData()
                 }
             }
-
         }
+        if GlobalData.shared.scene != 0 {
+            setupSearchControllerInHeader()
+        }
+    }
+    
+    private func setupSearchControllerInHeader() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "想轉一筆給誰呢？"
+        searchController.searchBar.delegate = self
+        
+        // 将 searchBar 设置为 tableView 的 tableHeaderView
+        friendTableView.tableHeaderView = searchController.searchBar
+        
+        // 设置 searchBar 的尺寸
+        searchController.searchBar.sizeToFit()
+        
+        definesPresentationContext = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // 隐藏导航栏
+        //navigationController?.setNavigationBarHidden(true, animated: animated)
         friendViewModel.getMan()
         friendViewModel.getFriends(sceneIndex: GlobalData.shared.scene)
-        //navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
     /*
@@ -154,7 +183,7 @@ extension FriendViewController: UITableViewDelegate{
     }
         
     func friendTableView(numberOfRowsInSection section: Int) -> Int {
-        return friendViewModel.friends_list.count
+        return isSearching ? filteredItems.count : friendViewModel.friends_list.count
     }
 }
 
@@ -177,9 +206,58 @@ extension FriendViewController: UITableViewDataSource{
     
     func friendTableView(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:FriendTableViewCell = self.friendTableView.dequeueReusableCell(withIdentifier: "FriendTableViewCell",for: indexPath) as! FriendTableViewCell
-        let friend = friendViewModel.friends_list[indexPath.row]
+        let friend = isSearching ? filteredItems[indexPath.row] : friendViewModel.friends_list[indexPath.row]
+
         cell.friend = friend
         return cell
     }
     
+}
+
+extension FriendViewController: UISearchResultsUpdating, UISearchBarDelegate {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text?.lowercased() else { return }
+        
+        if searchText.isEmpty {
+            filteredItems = friendViewModel.friends_list
+        } else {
+            // 过滤数据
+            filteredItems = friendViewModel.friends_list.filter { $0.name.lowercased().contains(searchText) }
+        }
+        
+        friendTableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        // 取消搜索时恢复原始数据
+        filteredItems.removeAll()
+        manArea.isHidden = false
+        if self.friendViewModel.friends_invite.count == 0 {
+            self.friendInviteArea.isHidden = true
+        } else {
+            self.friendInviteArea.isHidden = false
+        }
+        friendTableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            // 搜索文本为空时显示所有数据
+            filteredItems = friendViewModel.friends_list
+            friendTableView.reloadData()
+        }
+    }
+    
+    /// 搜索栏开始编辑时调用（获得焦点）
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        print("搜索栏开始编辑")
+        
+        // 显示取消按钮
+        searchBar.setShowsCancelButton(true, animated: true)
+        
+        manArea.isHidden = true
+        friendInviteArea.isHidden = true
+    }
+
 }

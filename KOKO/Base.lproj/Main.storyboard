@@ -236,15 +236,16 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MxN-tl-DvR">
                                                         <rect key="frame" x="0.0" y="36" width="375" height="248"/>
                                                         <subviews>
-                                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6Su-Vu-bmn">
-                                                                <rect key="frame" x="20" y="0.0" width="335" height="248"/>
+                                                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6Su-Vu-bmn">
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="448"/>
                                                                 <view key="tableFooterView" contentMode="scaleToFill" id="x1Z-Gq-Sat">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="445"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="445"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imgFriendsEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="eYT-EX-OT6">
-                                                                            <rect key="frame" x="47" y="30" width="244" height="172"/>
+                                                                            <rect key="frame" x="67" y="30" width="245" height="172"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="就從加好友開始吧：）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IfI-U3-u3Q">
@@ -255,7 +256,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHE-W9-0sa">
-                                                                            <rect key="frame" x="47" y="280" width="244" height="59"/>
+                                                                            <rect key="frame" x="67" y="280" width="245" height="59"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <string key="text">與好友們一起用 KOKO 聊起來！
 還能互相收付款、發紅包喔：）</string>
@@ -264,7 +265,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2d-EG-Y3x">
-                                                                            <rect key="frame" x="72" y="345" width="192" height="40"/>
+                                                                            <rect key="frame" x="92" y="345" width="192" height="40"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <state key="normal" title="Button"/>
                                                                             <buttonConfiguration key="configuration" style="plain">
@@ -272,12 +273,12 @@
                                                                             </buttonConfiguration>
                                                                         </button>
                                                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="izu-qV-MeF">
-                                                                            <rect key="frame" x="47" y="422" width="239" height="18"/>
+                                                                            <rect key="frame" x="66" y="422" width="239" height="18"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         </view>
                                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="好友更快找到你？設定 KOKO ID" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WDg-5T-34s">
-                                                                            <rect key="frame" x="47" y="420" width="239" height="30"/>
+                                                                            <rect key="frame" x="66" y="420" width="239" height="30"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                             <color key="textColor" systemColor="labelColor"/>
@@ -296,9 +297,9 @@
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="6Su-Vu-bmn" secondAttribute="bottom" id="6Ky-JR-aNy"/>
-                                                            <constraint firstAttribute="trailing" secondItem="6Su-Vu-bmn" secondAttribute="trailing" constant="20" id="gMf-fd-eDk"/>
+                                                            <constraint firstAttribute="trailing" secondItem="6Su-Vu-bmn" secondAttribute="trailing" id="gMf-fd-eDk"/>
                                                             <constraint firstItem="6Su-Vu-bmn" firstAttribute="top" secondItem="MxN-tl-DvR" secondAttribute="top" id="ngb-U4-rnD"/>
-                                                            <constraint firstItem="6Su-Vu-bmn" firstAttribute="leading" secondItem="MxN-tl-DvR" secondAttribute="leading" constant="20" id="oNb-Ew-avz"/>
+                                                            <constraint firstItem="6Su-Vu-bmn" firstAttribute="leading" secondItem="MxN-tl-DvR" secondAttribute="leading" id="oNb-Ew-avz"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -365,6 +366,7 @@
                         <outlet property="friendInviteArea" destination="cKU-TB-d2K" id="Pdp-HC-hey"/>
                         <outlet property="friendInviteTableView" destination="pO9-0Z-bk0" id="N7Q-cV-Cnd"/>
                         <outlet property="friendTableView" destination="6Su-Vu-bmn" id="hwb-DO-Meu"/>
+                        <outlet property="manArea" destination="x8N-Zc-iRm" id="Xg3-cC-RW7"/>
                         <outlet property="myIdLabel" destination="3Jp-06-GUz" id="olf-Zn-kdA"/>
                         <outlet property="myNameLabel" destination="dl8-UT-DzW" id="YVZ-H5-9CQ"/>
                         <outlet property="noFriendView" destination="x1Z-Gq-Sat" id="xTT-0R-jTw"/>
@@ -372,7 +374,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lbz-gc-GYT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="466" y="-89"/>
+            <point key="canvasLocation" x="464.80000000000001" y="-89.505247376311857"/>
         </scene>
     </scenes>
     <resources>
