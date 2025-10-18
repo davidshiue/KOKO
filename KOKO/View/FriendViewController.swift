@@ -123,6 +123,8 @@ class FriendViewController: UIViewController {
         }
         if GlobalData.shared.scene != 0 {
             setupSearchControllerInHeader()
+            friendTableView.refreshControl = UIRefreshControl()
+            friendTableView.refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         }
     }
     
@@ -149,6 +151,17 @@ class FriendViewController: UIViewController {
         friendViewModel.getFriends(sceneIndex: GlobalData.shared.scene)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        //...
+        friendTableView.refreshControl?.attributedTitle = NSAttributedString(string: "更新中...")
+    }
+
+    @objc func handleRefresh(){
+        friendViewModel.getFriends(sceneIndex: GlobalData.shared.scene)
+        friendTableView.refreshControl?.endRefreshing()
+        friendTableView.reloadData()
+    }
+    
     /*
     // MARK: - Navigation
 
