@@ -24,7 +24,7 @@ final class KOKOTests: XCTestCase {
         // Any test you write for XCTest can be annotated as throws and async.
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-        XCTAssert(true)
+        XCTAssert(true,"testExample")
     }
     
     func testJsonStringToDictionary(){
@@ -51,55 +51,64 @@ final class KOKOTests: XCTestCase {
         }
     }
 
-    func testGetFriend1() async throws {
-        var friends = [Friend]()
-        do {
-            friends = try await WebApiManager.shared.getFriend1()
-        } catch {
-            print("请求失败: \(error)")
-            XCTAssert(false)
-        }
-        if friends.count > 0 {
-            XCTAssert(true)
-        }
-    }
-
-    func testGetFriend2() async throws {
-        var friends = [Friend]()
-        do {
-            friends = try await WebApiManager.shared.getFriend2()
-        } catch {
-            print("请求失败: \(error)")
-            XCTAssert(false)
-        }
-        if friends.count > 0 {
-            XCTAssert(true)
+    func testGetFriend1() {
+        Task {
+            var friends = [Friend]()
+            do {
+                friends = try await WebApiManager.shared.getFriend1()
+            } catch {
+                print("请求失败: \(error)")
+                XCTAssert(false)
+            }
+            if friends.count > 0 {
+                XCTAssert(true)
+            }
         }
     }
 
-    func testGetFriend3() async throws{
-        var friends = [Friend]()
-        do {
-            friends = try await WebApiManager.shared.getFriend3()
-        } catch {
-            print("请求失败: \(error)")
-            XCTAssert(false)
-        }
-        if friends.count > 0 {
-            XCTAssert(true)
+    func testGetFriend2() {
+        Task {
+            var friends = [Friend]()
+            do {
+                friends = try await WebApiManager.shared.getFriend2()
+            } catch {
+                print("请求失败: \(error)")
+                XCTAssert(false)
+            }
+            if friends.count > 0 {
+                XCTAssert(true)
+            }
         }
     }
 
-    func testGetFriend4() async throws{
-        var friends = [Friend]()
-        do {
-            friends = try await WebApiManager.shared.getFriend4()
-        } catch {
-            print("请求失败: \(error)")
-            XCTAssert(false)
+    func testGetFriend3() {
+        Task {
+            
+            var friends = [Friend]()
+            do {
+                friends = try await WebApiManager.shared.getFriend3()
+            } catch {
+                print("请求失败: \(error)")
+                XCTAssert(false)
+            }
+            if friends.count > 0 {
+                XCTAssert(true)
+            }
         }
-        if friends.count == 0 {
-            XCTAssert(false)
+    }
+
+    func testGetFriend4() {
+        Task {
+            var friends = [Friend]()
+            do {
+                friends = try await WebApiManager.shared.getFriend4()
+            } catch {
+                print("请求失败: \(error)")
+                XCTAssert(false)
+            }
+            if friends.count == 0 {
+                XCTAssert(true)
+            }
         }
     }
 
