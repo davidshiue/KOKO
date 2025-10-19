@@ -14,6 +14,7 @@ class FriendViewController: UIViewController {
     @IBOutlet weak var myIdLabel: UILabel!
     @IBOutlet weak var friendInviteArea: UIView!
     @IBOutlet weak var friendInviteTableView: UITableView!
+    @IBOutlet weak var friendListTopArea: UIView!
     @IBOutlet weak var friendTableView: UITableView!
     @IBOutlet weak var noFriendView: UIView!
     //@IBOutlet weak var noFriendScrollView: UIScrollView!
@@ -256,7 +257,10 @@ extension FriendViewController: UISearchResultsUpdating, UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         // 取消搜索时恢复原始数据
         filteredItems.removeAll()
+        searchBar.setShowsCancelButton(true, animated: true)
+
         manArea.isHidden = false
+        friendListTopArea.isHidden = false
         if self.friendViewModel.friends_invite.count == 0 {
             self.friendInviteArea.isHidden = true
         } else {
@@ -281,6 +285,7 @@ extension FriendViewController: UISearchResultsUpdating, UISearchBarDelegate {
         searchBar.setShowsCancelButton(true, animated: true)
         
         manArea.isHidden = true
+        friendListTopArea.isHidden = true
         friendInviteArea.isHidden = true
     }
 
