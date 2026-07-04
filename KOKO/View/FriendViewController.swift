@@ -19,6 +19,7 @@ class FriendViewController: UIViewController {
     @IBOutlet weak var noFriendView: UIView!
     //@IBOutlet weak var noFriendScrollView: UIScrollView!
     @IBOutlet weak var addFriendTextView: UITextView!
+    @IBOutlet weak var kokoImageView: UIImageView!
     
     private let searchController = UISearchController(searchResultsController: nil)
     private var filteredItems: [Friend] = []
@@ -54,11 +55,28 @@ class FriendViewController: UIViewController {
             }*/
         }
     }
+    
+    func setKoKoEvent() {
+        // 1. ⚠️ 必須開啟使用者互動
+        kokoImageView.isUserInteractionEnabled = true
+        
+        // 2. 建立點擊手勢，並指定觸發的 function
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(kokoImageViewTapped))
+        
+        // 3. 將手勢加入到 UIImageView 上
+        kokoImageView.addGestureRecognizer(tapGesture)
+    }
 
+    @objc func kokoImageViewTapped(_ sender: UITapGestureRecognizer) {
+        print("圖片被點擊了！")
+        navigationController?.popViewController(animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setKoKoEvent()
+        
         let nib1 = UINib(nibName: "FriendInviteTableViewCell", bundle: nil)
         friendInviteTableView.register(nib1, forCellReuseIdentifier: "FriendInviteTableViewCell")
         
